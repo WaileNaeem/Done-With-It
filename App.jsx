@@ -1,33 +1,36 @@
-import {
-  Dimensions,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from 'react-native';
-import React from 'react';
-import WelcomeScreen from './src/screens/WelcomeScreen';
-import ViewImageScreen from './src/screens/ViewImageScreen';
-import ListingDetailsScreen from './src/screens/ListingDetailsScreen';
-import MessagesScreen from './src/screens/MessagesScreen';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {useWindowDimensions} from 'react-native';
+import React, {useState} from 'react';
+import {GestureHandlerRootView, TextInput} from 'react-native-gesture-handler';
 import Screen from './src/components/Screen';
-import ListItem from './src/components/ListItem';
-import Icon from './src/components/Icon';
+
+import AppTextinput from './src/components/AppTextinput';
+import AppPicker from './src/components/AppPicker';
+
+const categories = [
+  {label: 'Furniture', value: 1},
+  {label: 'Clothing', value: 2},
+  {label: 'Camera', value: 3},
+];
 
 const App = () => {
   const {height, width} = useWindowDimensions();
-  console.log('height', height);
-  console.log('width', width);
+  // console.log('height', height);
+  // console.log('width', width);
+  const [category, setCategory] = useState();
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <Screen>
-        <ListItem title={'My Title'} IconComponent={<Icon name={'email'} />} />
+        <AppPicker
+          selectedItem={category}
+          onSelectItem={item => setCategory(item)}
+          icon={'apps'}
+          placeholder={'Category'}
+          items={categories}
+        />
+        <AppTextinput icon={'email'} placeholder="Email" />
       </Screen>
     </GestureHandlerRootView>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({});
