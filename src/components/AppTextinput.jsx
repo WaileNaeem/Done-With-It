@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import React from 'react';
 
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -15,7 +15,11 @@ const AppTextinput = ({icon, ...otherProps}) => {
           style={styles.icon}
         />
       )}
-      <TextInput style={defaultStyles.text} {...otherProps} />
+      <TextInput
+        style={defaultStyles.text}
+        {...otherProps}
+        placeholderTextColor={defaultStyles.colors.medium}
+      />
     </View>
   );
 };

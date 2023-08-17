@@ -14,8 +14,9 @@ import AppText from './AppText';
 import Screen from './Screen';
 import PickerItem from './PickerItem';
 
-const AppPicker = ({icon, placeholder, items, selectedItem, onSelectItem}) => {
+function AppPicker({icon, items, onSelectItem, placeholder, selectedItem}) {
   const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
@@ -28,11 +29,14 @@ const AppPicker = ({icon, placeholder, items, selectedItem, onSelectItem}) => {
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>
-            {selectedItem ? selectedItem.label : placeholder}
-          </AppText>
+          {selectedItem ? (
+            <AppText style={styles.text}>{selectedItem.label}</AppText>
+          ) : (
+            <AppText style={styles.placeholder}>{placeholder}</AppText>
+          )}
+
           <MaterialIcon
-            name={'chevron-down'}
+            name="chevron-down"
             size={20}
             color={defaultStyles.colors.medium}
           />
@@ -40,7 +44,7 @@ const AppPicker = ({icon, placeholder, items, selectedItem, onSelectItem}) => {
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
         <Screen>
-          <Button onPress={() => setModalVisible(false)} title="Close" />
+          <Button title="Close" onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
             keyExtractor={item => item.value.toString()}
@@ -58,9 +62,7 @@ const AppPicker = ({icon, placeholder, items, selectedItem, onSelectItem}) => {
       </Modal>
     </>
   );
-};
-
-export default AppPicker;
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -73,9 +75,14 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
-    alignSelf: 'center',
+  },
+  placeholder: {
+    color: defaultStyles.colors.medium,
+    flex: 1,
   },
   text: {
     flex: 1,
   },
 });
+
+export default AppPicker;

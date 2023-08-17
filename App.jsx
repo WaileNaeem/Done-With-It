@@ -5,6 +5,8 @@ import Screen from './src/components/Screen';
 
 import AppTextinput from './src/components/AppTextinput';
 import AppPicker from './src/components/AppPicker';
+import LoginScreen from './src/screens/LoginScreen';
+import ListingEditScreen from './src/screens/ListingEditScreen';
 
 const categories = [
   {label: 'Furniture', value: 1},
@@ -19,18 +21,20 @@ const App = () => {
   const [category, setCategory] = useState();
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <Screen>
-        <AppPicker
-          selectedItem={category}
-          onSelectItem={item => setCategory(item)}
-          icon={'apps'}
-          placeholder={'Category'}
-          items={categories}
-        />
-        <AppTextinput icon={'email'} placeholder="Email" />
-      </Screen>
+      <ListingEditScreen />
     </GestureHandlerRootView>
   );
 };
 
 export default App;
+
+/*<Screen>
+<AppPicker
+  selectedItem={category}
+  onSelectItem={item => setCategory(item)}
+  icon={'apps'}
+  placeholder={'Category'}
+  items={categories}
+/>
+<AppTextinput icon={'email'} placeholder="Email" />
+</Screen>*/
