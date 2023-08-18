@@ -7,6 +7,8 @@ import AppTextinput from './src/components/AppTextinput';
 import AppPicker from './src/components/AppPicker';
 import LoginScreen from './src/screens/LoginScreen';
 import ListingEditScreen from './src/screens/ListingEditScreen';
+import MessagesScreen from './src/screens/MessagesScreen';
+import ListingsScreen from './src/screens/ListingsScreen';
 
 const categories = [
   {label: 'Furniture', value: 1},

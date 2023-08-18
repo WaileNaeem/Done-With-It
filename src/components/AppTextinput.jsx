@@ -4,9 +4,9 @@ import React from 'react';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import defaultStyles from '../config/styles';
 
-const AppTextinput = ({icon, ...otherProps}) => {
+const AppTextinput = ({icon, width = '100%', ...otherProps}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {width}]}>
       {icon && (
         <MaterialIcon
           name={icon}
@@ -29,10 +29,9 @@ export default AppTextinput;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: defaultStyles.colors.light,
-    borderRadius: 25,
+    borderRadius: 30,
     flexDirection: 'row',
-    width: '100%',
-    padding: 15,
+    padding: 10,
     marginVertical: 10,
   },
   icon: {

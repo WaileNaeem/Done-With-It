@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import {colors} from '../config/colors';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -23,7 +23,5 @@ const Icon = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default Icon;

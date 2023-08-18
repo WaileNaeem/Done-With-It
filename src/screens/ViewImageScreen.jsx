@@ -1,17 +1,17 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import React from 'react';
 
 import {colors} from '../config/colors';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ViewImageScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.closeIcon}>
-        <Icon name="close" color="white" size={35} />
+        <MaterialIcon name="close" color="white" size={35} />
       </View>
       <View style={styles.deleteIcon}>
-        <Icon name="trash-can-outline" color="white" size={35} />
+        <MaterialIcon name="trash-can-outline" color="white" size={35} />
       </View>
       <Image
         resizeMode="contain"

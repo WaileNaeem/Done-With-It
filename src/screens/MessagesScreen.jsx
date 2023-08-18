@@ -1,5 +1,6 @@
 import {StyleSheet, FlatList} from 'react-native';
 import React, {useState} from 'react';
+
 import ListItem from '../components/ListItem';
 import Screen from '../components/Screen';
 import ListItemSeparator from '../components/ListItemSeparator';
@@ -62,5 +63,3 @@ const MessagesScreen = () => {
 };
 
 export default MessagesScreen;
-
-const styles = StyleSheet.create({});
