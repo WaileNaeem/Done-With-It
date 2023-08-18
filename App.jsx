@@ -23,7 +23,7 @@ const App = () => {
   const [category, setCategory] = useState();
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <ListingEditScreen />
+      <Screen></Screen>
     </GestureHandlerRootView>
   );
 };
