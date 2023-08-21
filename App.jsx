@@ -9,6 +9,7 @@ import LoginScreen from './src/screens/LoginScreen';
 import ListingEditScreen from './src/screens/ListingEditScreen';
 import MessagesScreen from './src/screens/MessagesScreen';
 import ListingsScreen from './src/screens/ListingsScreen';
+import ImageSlider from './src/screens/ImageSlider';
 
 const categories = [
   {label: 'Furniture', value: 1},
@@ -23,7 +24,7 @@ const App = () => {
   const [category, setCategory] = useState();
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <Screen></Screen>
+      <ImageSlider />
     </GestureHandlerRootView>
   );
 };
