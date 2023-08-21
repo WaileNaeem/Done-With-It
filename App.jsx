@@ -1,14 +1,6 @@
 import {useWindowDimensions} from 'react-native';
 import React, {useState} from 'react';
-import {GestureHandlerRootView, TextInput} from 'react-native-gesture-handler';
-import Screen from './src/components/Screen';
-
-import AppTextinput from './src/components/AppTextinput';
-import AppPicker from './src/components/AppPicker';
-import LoginScreen from './src/screens/LoginScreen';
-import ListingEditScreen from './src/screens/ListingEditScreen';
-import MessagesScreen from './src/screens/MessagesScreen';
-import ListingsScreen from './src/screens/ListingsScreen';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import ImageSlider from './src/screens/ImageSlider';
 
 const categories = [

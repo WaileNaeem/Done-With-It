@@ -10,21 +10,23 @@ import React, {useState} from 'react';
 
 const {height, width} = Dimensions.get('window');
 
-const ImageSlider = () => {
-  const [data, SetData] = useState([1, 1, 1, 1, 1]);
+const ImageSliderSirsiz = () => {
+  const [data, setData] = useState([
+    {id: 1, name: 'ahmad'},
+    {id: 1, name: 'ali'},
+    {id: 1, name: 'furqan'},
+    {id: 1, name: 'waile'},
+    {id: 1, name: 'junaid'},
+  ]);
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <View
       style={{
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
       }}>
       <View
         style={{
-          height: height / 2,
-          justifyContent: 'center',
-          alignItems: 'center',
+          flex: 1,
         }}>
         <FlatList
           data={data}
@@ -39,17 +41,16 @@ const ImageSlider = () => {
           renderItem={({item, index}) => (
             <View
               style={{
-                width: width - 50,
-                height: height / 2,
+                width: width,
                 justifyContent: 'center',
                 alignItems: 'center',
+                backgroundColor: 'green',
               }}>
               <TouchableOpacity
                 disabled
                 style={{
-                  width: '90%',
-                  height: '90%',
-                  backgroundColor: 'green',
+                  padding: 20,
+                  backgroundColor: 'white',
                   borderRadius: 10,
                 }}>
                 <Text style={{color: 'black', fontWeight: 'bold'}}>
@@ -63,7 +64,6 @@ const ImageSlider = () => {
       <View
         style={{
           flexDirection: 'row',
-          width: width,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
@@ -71,7 +71,7 @@ const ImageSlider = () => {
           <View
             key={index}
             style={{
-              width: currentIndex == index ? 50 : 8,
+              width: currentIndex == index ? 30 : 8,
               height: currentIndex == index ? 10 : 8,
               borderRadius: currentIndex == index ? 5 : 4,
               backgroundColor: currentIndex == index ? 'green' : 'gray',
@@ -84,6 +84,6 @@ const ImageSlider = () => {
   );
 };
 
-export default ImageSlider;
+export default ImageSliderSirsiz;
 
 const styles = StyleSheet.create({});
