@@ -80,6 +80,37 @@ const ImageSlider = () => {
           />
         ))}
       </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: 20,
+          width: width,
+          marginTop: 30,
+        }}>
+        <TouchableOpacity
+          style={{
+            width: 100,
+            height: 40,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'orange',
+            borderRadius: 10,
+          }}>
+          <Text>Previous</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            width: 100,
+            height: 40,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'orange',
+            borderRadius: 10,
+          }}>
+          <Text>Next</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
